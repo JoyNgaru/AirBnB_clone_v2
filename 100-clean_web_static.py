@@ -41,4 +41,3 @@ def do_clean(number=0):
     """Fabric script that deletes aout of dates archives"""
     local_clean(number)
     remote_clean(number)
-
