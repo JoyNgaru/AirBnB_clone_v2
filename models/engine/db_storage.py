@@ -29,6 +29,18 @@ class DBStorage():
                                               getenv('HBNB_MYSQL_DB')),
                                       pool_pre_ping=True)
         if getenv('HBNB_ENV') == 'test':
+            self.__engine = create_engine(
+            'mysql+mysqldb://' +
+            HBNB_MYSQL_USER +
+            ':' +
+            HBNB_MYSQL_PWD +
+            '@' +
+            HBNB_MYSQL_HOST +
+            '/' +
+            HBNB_MYSQL_DB)
+
+        if HBNB_ENV == 'test':
+            Base.metadata.drop_all(bind=self.__engine)
             Base.metadata.drop_all(bind=self.__engine)
 
     def all(self, cls=None):
@@ -103,7 +115,9 @@ class DBStorage():
                    "Place": Place,
                    "Review": Review}
         return classes
-
+    def save(self):
+        '''commit all changes of the current db session'''
+        self.__session.commit()
     def attributes(self):
         """Returns the valid attributes and their types for classname."""
         attributes = {
