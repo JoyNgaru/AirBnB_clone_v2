@@ -73,8 +73,8 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
         except NameError:
             print("** class doesn't exist **")
-   
-    def do_show(self, line):
+
+        def do_show(self, line):
         """Displays the string representation of an instance
         """
         try:
