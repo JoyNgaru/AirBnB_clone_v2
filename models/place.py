@@ -83,5 +83,3 @@ class Place(BaseModel, Base):
             from models.amenity import Amenity
             if type(obj) == type(Amenity):
                 self.amenity_ids.append(obj.id)
-
-
