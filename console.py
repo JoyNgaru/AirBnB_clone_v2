@@ -75,7 +75,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
 
         def do_show(self, line):
-        """Displays the string representation of an instance
+            """Displays the string representation of an instance
         """
         try:
             if not line:
