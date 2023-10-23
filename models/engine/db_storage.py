@@ -96,7 +96,9 @@ class DBStorage():
     def close(self):
         """Removes the session"""
         self.__session.remove()
-
+ def get_session(self):
+        """Get a new session for database operations."""
+        return self.__session()
     def classes(self):
         """Returns a dictionary of valid classes and their references."""
         from models.base_model import BaseModel
