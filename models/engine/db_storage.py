@@ -96,6 +96,12 @@ class DBStorage():
     def close(self):
         """Removes the session"""
         self.__session.remove()
+<<<<<<< HEAD
+=======
+ def get_session(self):
+        """Get a new session for database operations."""
+        return self.__session()
+>>>>>>> 5409e07005f7ea9f6a259661aefd2af5c2431964
     def classes(self):
         """Returns a dictionary of valid classes and their references."""
         
