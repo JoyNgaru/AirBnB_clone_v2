@@ -97,10 +97,6 @@ class DBStorage():
         """Removes the session"""
         self.__session.remove()
 
-   def get_session(self):
-        """Get a new session for database operations."""
-        return self.__session()
-
     def classes(self):
         """Returns a dictionary of valid classes and their references."""
         
